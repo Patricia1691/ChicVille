@@ -22,13 +22,12 @@ public class SignInPage extends BasePage {
 
     private By signInButton = By.id("Autentificare");
     private By logo = By.id("logo");
-    private By emailField = By.xpath("//input[@ng-model='Email']");
-    private By passwordField = By.xpath("//input[@ng-model='Password']");
-    private By enterButton = By.id("enterbtn");
-    private By errorMessage = By.id("errormsg");
-    private By skipSignInButton = By.id("btn2");
-    private By signUp = By.id("email");
-    private By registerButton = By.id("enterimg");
+    private By emailField = By.xpath("//input[@type='email']");
+    private By passwordField = By.xpath("//input[@type='password']");
+    private By enterButton = By.id("send2");
+    private By errorMessage = By.id("error-msg");
+    private By signUpEmailField = By.id("email_address");
+    private By enterSignUpButton = By.id("submit");
 
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' Button");
@@ -72,20 +71,16 @@ public class SignInPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void clickSkipSignInButton() {
-        LOG.info("Click 'skip sign in button'");
-        driver.findElement(skipSignInButton).click();
-    }
 
     public void email(String email) {
         LOG.info(" insert email address");
-        driver.findElement(signUp).sendKeys(email);
+        driver.findElement(signUpEmailField).sendKeys(email);
     }
 
 
-    public void clickRegisterButton () {
+    public void clickRegisterButton() {
         LOG.info("click register button");
-        driver.findElement(registerButton);
+        driver.findElement(enterSignUpButton);
     }
 
 }

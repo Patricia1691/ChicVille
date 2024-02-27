@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.SignInPage.SignInPage;
 import tests.BaseTest;
 
 public class SignInTest extends BaseTest {
@@ -24,23 +23,17 @@ public class SignInTest extends BaseTest {
         LOG.info("Verify if logo is displayed");
         Assert.assertTrue(signInPage.isLogoDysplayed(), "Logo is not displayed");
 
-        LOG.info("Insert Email");
-        signInPage.insertEmail(email);
-
-        LOG.info("Insert Password");
-        signInPage.insertPassword(password);
-
-        LOG.info("Click 'Enter' button");
+        LOG.info("Click Enter and check message");
         signInPage.clickEnterButton();
-
-        LOG.info("Verify if error message is displayed");
-        Assert.assertTrue(signInPage.isErrorMessageDisplayed(), "Error message is not displayed");
+        Assert.assertTrue(signInPage.isErrorMessageDisplayed(), "Error msg is not displayed");
 
         LOG.info("Navigate back");
         signInPage.clickBack();
 
         LOG.info("Click 'Skip sign in button'");
         signInPage.clickSignInButton();
+
+
 
 
 

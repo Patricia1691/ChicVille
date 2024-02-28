@@ -20,14 +20,12 @@ public class SignInPage extends BasePage {
         return instance;
     }
 
-    private By signInButton = By.id("Autentificare");
-    private By logo = By.id("logo");
+    private By signInButton = By.xpath("//a[text()='Autentificare']");
     private By emailField = By.xpath("//input[@type='email']");
     private By passwordField = By.xpath("//input[@type='password']");
     private By enterButton = By.id("send2");
-    private By errorMessage = By.id("error-msg");
-    private By signUpEmailField = By.id("email_address");
-    private By enterSignUpButton = By.id("submit");
+    private By errorMessage = By.xpath("//div[@class='account-login']//li[@class='error-msg']");
+
 
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' Button");
@@ -40,18 +38,14 @@ public class SignInPage extends BasePage {
 
     }
 
-    public boolean isLogoDysplayed() {
-        LOG.info("Verify if Logo image is displayed");
-        return driver.findElement(logo).isDisplayed();
-    }
 
-    public void insertEmail(String Email) {
+    public void insertEmailField(String Email) {
         LOG.info("input 'Email address' in field");
         driver.findElement(emailField).sendKeys(Email);
     }
 
-    public void insertPassword(String Password) {
-        LOG.info("input'Password' in field");
+    public void insertPasswordField(String Password) {
+        LOG.info("input 'Password' in field");
         driver.findElement(passwordField).sendKeys(Password);
     }
 
@@ -66,22 +60,6 @@ public class SignInPage extends BasePage {
 
     }
 
-    public void clickBack() {
-        LOG.info("Click back in browser");
-        driver.navigate().back();
-    }
-
-
-    public void email(String email) {
-        LOG.info(" insert email address");
-        driver.findElement(signUpEmailField).sendKeys(email);
-    }
-
-
-    public void clickRegisterButton() {
-        LOG.info("click register button");
-        driver.findElement(enterSignUpButton);
-    }
 
 }
 

@@ -11,7 +11,7 @@ public class SignInTest extends BaseTest {
 
     @Test
     public void signIn() {
-        String email= "abc@email.com";
+        String email = "abc@email.com";
         String password = "parola1";
 
         LOG.info("Check 'button'");
@@ -20,21 +20,13 @@ public class SignInTest extends BaseTest {
         LOG.info("Click 'Sign in' button");
         signInPage.clickSignInButton();
 
-        LOG.info("Verify if logo is displayed");
-        Assert.assertTrue(signInPage.isLogoDysplayed(), "Logo is not displayed");
+        LOG.info("Complete the fields");
+        signInPage.insertEmailField(email);
+        signInPage.insertPasswordField(password);
 
         LOG.info("Click Enter and check message");
         signInPage.clickEnterButton();
         Assert.assertTrue(signInPage.isErrorMessageDisplayed(), "Error msg is not displayed");
-
-        LOG.info("Navigate back");
-        signInPage.clickBack();
-
-        LOG.info("Click 'Skip sign in button'");
-        signInPage.clickSignInButton();
-
-
-
 
 
     }

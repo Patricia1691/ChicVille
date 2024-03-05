@@ -20,10 +20,14 @@ public class RegisterPage extends BasePage {
 
     }
 
-    private By inputFirstName = By.xpath("//input[@id='firstname']");
-    private By inputLastName = By.xpath("//input[@id='lastname']");
-    private By consent = By.xpath("//div[@id='gdpr-terms']");
-    private By inputEmail = By.xpath("//input[@id='email_address']");
+    private By inputFirstName = By.id("firstname");
+    private By inputLastName = By.id("lastname");
+    private By acceptConsent = By.xpath("//div[@id='gdpr-terms']/input[@type='checkbox']");
+    private By inputEmail = By.id("email_address");
+    private By password = By.id("password");
+    private By confirmPassword = By.id("confirmation");
+    private By sendButton = By.xpath("//span[text()='Trimite']");
+    private By mandatoryField = By.id("captcha_user_create");
 
 
     public void insertFullName(String fName, String lName) {
@@ -32,9 +36,9 @@ public class RegisterPage extends BasePage {
         driver.findElement(inputLastName).sendKeys(lName);
     }
 
-    public void pressConsent() {
-        LOG.info("Press Consent");
-        driver.findElement(consent).click();
+    public void acceptConsent() {
+        LOG.info("Click the consent button");
+        driver.findElement(acceptConsent).click();
     }
 
 
@@ -42,6 +46,26 @@ public class RegisterPage extends BasePage {
         LOG.info("Insert email");
         driver.findElement(inputEmail).sendKeys(email);
     }
+
+    public void setPassword(String pass) {
+
+        LOG.info("Setting password and confirm password");
+        driver.findElement(password).sendKeys(pass);
+        driver.findElement(confirmPassword).sendKeys(pass);
+    }
+
+    public void clickSendButton() {
+        LOG.info("Click Send button");
+        driver.findElement(sendButton).click();
+    }
+
+    public boolean isMandatoryFieldDisplayed() {
+        LOG.info("Verify if error message is displayed");
+        return driver.findElement(mandatoryField).isDisplayed();
+
+    }
+
+
 
 
 

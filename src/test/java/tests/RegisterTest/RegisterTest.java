@@ -27,10 +27,10 @@ public class RegisterTest extends BaseTest {
 
 
 
-        sleep(3000L);
+
         LOG.info("Typing full name");
         registerPage.acceptConsent();
-        sleep(3000L);
+
         registerPage.insertFullName(firstName, lastName);
         sleep(3000L);
 
@@ -42,14 +42,16 @@ public class RegisterTest extends BaseTest {
 
         sleep(3000L);
 
+        LOG.info("Click 'Accept cookies' button");
+        registerPage.clickAcceptCookies();
+
         LOG.info("Click 'Send' button");
         registerPage.clickSendButton();
 
         LOG.info("Click Send and check message");
         registerPage.clickSendButton();
         Assert.assertTrue(registerPage.isMandatoryFieldDisplayed(), "Mandatory Field is not displayed");
-
-
+        sleep(3000L);
 
 
 

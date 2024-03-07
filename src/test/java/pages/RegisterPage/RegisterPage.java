@@ -26,8 +26,10 @@ public class RegisterPage extends BasePage {
     private By inputEmail = By.id("email_address");
     private By password = By.id("password");
     private By confirmPassword = By.id("confirmation");
-    private By sendButton = By.xpath("//span[text()='Trimite']");
-    private By mandatoryField = By.id("captcha_user_create");
+    private By acceptCookies = By.xpath("//div[@class='ccb__button']/button[@class='consent-give']");
+    private By sendButton = By.xpath("//button[@type='submit']");
+    private By mandatoryField = By.id("advice-required-entry-captcha_user_create");
+
 
 
     public void insertFullName(String fName, String lName) {
@@ -52,6 +54,11 @@ public class RegisterPage extends BasePage {
         LOG.info("Setting password and confirm password");
         driver.findElement(password).sendKeys(pass);
         driver.findElement(confirmPassword).sendKeys(pass);
+    }
+
+    public void clickAcceptCookies(){
+        LOG.info("Click Accept cookies");
+        driver.findElement(acceptCookies).click();
     }
 
     public void clickSendButton() {

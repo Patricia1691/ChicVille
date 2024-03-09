@@ -1,6 +1,8 @@
 package pages.SearchMenuPage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -24,7 +26,8 @@ public class SearchMenuPage extends BasePage {
     private By noutatiMenu = By.xpath("//span[text()='noutati']");
     private By noutatiCategory = By.xpath("//div[@class='nav-dropdown level0 shown-sub']//a[.='Noutati']");
     private By filtreaza = By.xpath("//label[text()='Filtreaza']");
-    private By selecteaza = By.xpath("//dd[@class='odd']/select[@id='layered-select']");
+    private By selectMaterial = By.xpath("//dd[@class='odd']/select[@id='layered-select']");
+
 
     public void clickAcceptCookies(){
         LOG.info("Click Accept cookies");
@@ -46,12 +49,16 @@ public class SearchMenuPage extends BasePage {
         driver.findElement(filtreaza).click();
     }
 
-    public void clickSelecteaza(){
-        LOG.info("Click 'Selecteaza' button");
-        driver.findElement(selecteaza).click();
+    public void selectMaterial(String material) {
+        LOG.info("Selecting  country");
+        driver.findElement(selectMaterial).click();
+        driver.findElement(selectMaterial).sendKeys(material);
+        driver.findElement(selectMaterial).sendKeys(Keys.ENTER);
     }
 
-}
+    }
+
+
 
 
 

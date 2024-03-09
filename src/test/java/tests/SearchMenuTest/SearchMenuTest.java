@@ -17,9 +17,10 @@ public class SearchMenuTest extends BaseTest {
     private String noutati = getBaseUrl() + "oportunitati/noutati.";
     private String giftCards = getBaseUrl() + "gift-card/gift-card-chicville";
     private String mese = getBaseUrl() + "mobila/mese";
+    String material = "bumbac";
 
     @Test
-    public void fillRegister() {
+    public void fillSearchMenu() {
         driver.get(noutati);
 
         sleep(3000L);
@@ -39,8 +40,8 @@ public class SearchMenuTest extends BaseTest {
         searchMenuPage.clickFiltreaza();
         sleep(3000L);
 
-        LOG.info("Click 'Selecteaza' button");
-        searchMenuPage.clickSelecteaza();
+        LOG.info("Click 'Select material' button");
+        searchMenuPage.selectMaterial("bumbac");
         sleep(3000L);
 
 

@@ -24,7 +24,16 @@ public class SearchBarPage extends BasePage {
 
     private By inputProductField = By.xpath("//div[@class='f-fix']/input[@id='search']");
     private By searchBarButton = By.xpath("//button[@class='button btn-search']");
-    private By canaDaily = By.xpath("//a[text()='Cana Daily din ceramica gri 460 ml']");
+    private By acceptCookies = By.xpath("//div[@class='ccb__button']/button[@class='consent-give']");
+    private By canaDaily = By.id("image-to-switch-45059");
+    private By addToCart = By.xpath("//div[@class='add-to-cart']/button[@title='Cumpara']");
+    private By addQuantity = By.xpath("//input[@class='input-text qty']");
+//    private By removeButton = By.xpath("//a[@title='Remove item']");
+    private By successfullyAddedField = By.xpath("//li[@class='success-msg']");
+    private By backButton = By.xpath("//button[@title='Inapoi la cumparaturi']");
+    private By homeButton = By.xpath("//li[@class='home']");
+
+
 
 
 
@@ -42,10 +51,53 @@ public class SearchBarPage extends BasePage {
 
     }
 
+    public void clickAcceptCookies(){
+        LOG.info("Click Accept cookies");
+        driver.findElement(acceptCookies).click();
+    }
+
     public void clickCanaDaily(){
-        LOG.info("Click Cana Daily button");
+        LOG.info("Click 'Cana Daily' button");
         driver.findElement(canaDaily).click();
     }
+
+    public void clickAddToCart(){
+        LOG.info("Click 'Add to cart' button");
+        driver.findElement(addToCart).click();
+        sleep(3000);
+    }
+
+    public void typeInAddQuantityField(String quantity) {
+        LOG.info("Typing value in 'Quantity' field");
+        driver.findElement(addQuantity).clear();
+        driver.findElement(addQuantity).sendKeys(quantity);
+        sleep(3000);
+
+    }
+
+//    public void clickRemoveButton(){
+//        LOG.info("Click 'remove' button");
+//        driver.findElement(removeButton).click();
+//    }
+
+    public boolean isSuccessfullyAddedFieldDisplayed() {
+        LOG.info("Verify if the message is displayed");
+        return driver.findElement(successfullyAddedField).isDisplayed();
+
+    }
+
+    public void clickBackButton(){
+        LOG.info("Click back button");
+        driver.findElement(backButton).click();
+        sleep(3000);
+    }
+
+    public void clickHomeButton(){
+        LOG.info("Click home button");
+        driver.findElement(homeButton).click();
+        sleep(3000);
+    }
+
 
 
 

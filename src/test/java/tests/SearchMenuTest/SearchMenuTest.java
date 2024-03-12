@@ -52,6 +52,10 @@ public class SearchMenuTest extends BaseTest {
         LOG.info("Add the quantity in the field");
         searchMenuPage.typeInAddQuantityField(quantity);
 
+        LOG.info("Click Actualizeaza button");
+        searchMenuPage.clickActualizeazaButton();
+        sleep(3000L);
+
 
 
 

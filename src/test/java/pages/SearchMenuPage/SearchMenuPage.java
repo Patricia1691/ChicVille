@@ -29,6 +29,9 @@ public class SearchMenuPage extends BasePage {
     private By selectMaterial = By.xpath("//dd[@class='odd']/select[@id='layered-select']");
     private By clickCart = By.xpath("//button[@class='button btn-cart']");
     private By addQuantity = By.xpath("//input[@class='input-text qty']");
+    private By actualizeazaButton = By.xpath("//button[@class='button btn-update-pop']");
+    //de facut spre finalizarea comenzii-nu gasesc xpath bun
+
 
 
     public void clickAcceptCookies(){
@@ -71,7 +74,12 @@ public class SearchMenuPage extends BasePage {
         driver.findElement(addQuantity).clear();
         driver.findElement(addQuantity).sendKeys(quantity);
 
+    }
 
+    public void clickActualizeazaButton(){
+        LOG.info("Click Actualizeaza button");
+        driver.findElement(actualizeazaButton).click();
+        sleep(3000);
     }
 
 

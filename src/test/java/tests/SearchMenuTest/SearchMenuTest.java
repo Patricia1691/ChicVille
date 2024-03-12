@@ -18,6 +18,7 @@ public class SearchMenuTest extends BaseTest {
     private String giftCards = getBaseUrl() + "gift-card/gift-card-chicville";
     private String mese = getBaseUrl() + "mobila/mese";
     String material = "bumbac";
+    String quantity = "3";
 
     @Test
     public void fillSearchMenu() {
@@ -41,8 +42,17 @@ public class SearchMenuTest extends BaseTest {
         sleep(3000L);
 
         LOG.info("Click 'Select material' button");
-        searchMenuPage.selectMaterial("bumbac");
+        searchMenuPage.selectMaterial(material);
         sleep(3000L);
+
+        LOG.info("Click 'Cart' button");
+        searchMenuPage.clickCart();
+        sleep(3000L);
+
+        LOG.info("Add the quantity in the field");
+        searchMenuPage.typeInAddQuantityField(quantity);
+
+
 
 
 

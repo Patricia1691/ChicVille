@@ -23,14 +23,17 @@ public class SearchBarPage extends BasePage {
     }
 
     private By inputProductField = By.xpath("//div[@class='f-fix']/input[@id='search']");
-    private By searchBarButton = By.xpath("//button[@class='button search-close']");
-    private By canaIepure = By.xpath("//div[@class='prolabel-wrapper']/a[@id='image-to-switch-20476']");
+    private By searchBarButton = By.xpath("//button[@class='button btn-search']");
+    private By canaDaily = By.xpath("//a[text()='Cana Daily din ceramica gri 460 ml']");
 
 
 
     public void insertProductField(String productField) {
         LOG.info("Insert product field");
+        driver.findElement(inputProductField).click();
+        driver.findElement(inputProductField).clear();
         driver.findElement(inputProductField).sendKeys(productField);
+
     }
 
     public void clickSearchBarButton(){
@@ -39,9 +42,9 @@ public class SearchBarPage extends BasePage {
 
     }
 
-    public void clickCanaIepure(){
-        LOG.info("Click cana iepure button");
-        driver.findElement(canaIepure).click();
+    public void clickCanaDaily(){
+        LOG.info("Click Cana Daily button");
+        driver.findElement(canaDaily).click();
     }
 
 

@@ -27,8 +27,8 @@ public class SearchBarTest extends BaseTest {
         searchBarPage.clickSearchBarButton();
         sleep(3000L);
 
-        LOG.info("Click cana iepure button");
-        searchBarPage.clickCanaIepure();
+        LOG.info("Click Cana Daily button");
+        searchBarPage.clickCanaDaily();
         sleep(3000L);
 
 

@@ -27,9 +27,9 @@ public class SearchBarPage extends BasePage {
     private By addToCart = By.xpath("//div[@class='add-to-cart']/button[@title='Cumpara']");
     private By addQuantity = By.xpath("//input[@class='input-text qty']");
     private By removeButton = By.xpath("//a[@title='Remove item']");
-    private By successfullyAddedField = By.xpath("//li[@class='success-msg']");
-    private By backButton = By.xpath("//button[@title='Inapoi la cumparaturi']");
+    private By emptyCartMessage = By.id("ajaxpro-notice-form");
     private By homeButton = By.xpath("//li[@class='home']");
+
 
 
     public void insertProductField(String productField) {
@@ -74,20 +74,16 @@ public class SearchBarPage extends BasePage {
         LOG.info("Click 'remove' button");
         driver.findElement(removeButton).click();
         driver.switchTo().alert().accept();
-    }
-
-
-    public boolean isSuccessfullyAddedFieldDisplayed() {
-        LOG.info("Verify if the message is displayed");
-        return driver.findElement(successfullyAddedField).isDisplayed();
-
-    }
-
-    public void clickBackButton() {
-        LOG.info("Click back button");
-        driver.findElement(backButton).click();
         sleep(3000);
     }
+
+
+    public boolean isEmptyCartMessageDisplayed() {
+        LOG.info("Verify if the empty cart message is displayed");
+        return driver.findElement(emptyCartMessage).isDisplayed();
+
+    }
+
 
     public void clickHomeButton() {
         LOG.info("Click home button");

@@ -24,14 +24,15 @@ public class SearchMenuPage extends BasePage {
 
     private By acceptCookies = By.xpath("//div[@class='ccb__button']/button[@class='consent-give']");
     private By noutatiMenu = By.xpath("//span[text()='noutati']");
-    private By noutatiCategory = By.xpath("//a[text()='Noutati']");
+    private By noutatiCategory = By.xpath("//div[@class='nav-dropdown level0 shown-sub']/div[@class='nav-dropdown-inner level0']");
     private By filtreaza = By.xpath("//label[text()='Filtreaza']");
     private By selectMaterial = By.xpath("//dd[@class='odd']/select[@id='layered-select']");
     private By clickCart = By.xpath("//button[@class='button btn-cart']");
     private By addQuantity = By.xpath("//input[@class='input-text qty']");
     private By actualizeazaButton = By.xpath("//button[@class='button btn-update-pop']");
     private By backShoppingButton = By.xpath("//button[@class='button btn-continue']");
-    private By removeFilter = By.xpath("//a[@class='btn-remove']/parent::li");
+    private By removeFilter = By.xpath("//a[text()='Sterge Toate']");
+
 
 
 
@@ -70,7 +71,6 @@ public class SearchMenuPage extends BasePage {
     }
 
 
-
     public void typeInAddQuantityField(String quantity) {
         LOG.info("Typing value in 'Quantity' field");
         driver.findElement(addQuantity).clear();
@@ -95,6 +95,8 @@ public class SearchMenuPage extends BasePage {
         driver.findElement(removeFilter).click();
 
     }
+
+
 
 
 

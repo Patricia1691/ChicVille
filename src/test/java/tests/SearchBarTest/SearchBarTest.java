@@ -48,12 +48,10 @@ public class SearchBarTest extends BaseTest {
         searchBarPage.clickRemoveButton();
         sleep(3000L);
 
-        LOG.info("Click Send and check message");
-        Assert.assertTrue(searchBarPage.isSuccessfullyAddedFieldDisplayed(), "Successfully Added Field is not displayed");
+        LOG.info("Check message");
+        Assert.assertTrue(searchBarPage.isEmptyCartMessageDisplayed(), "Empty cart message is not displayed");
         sleep(3000L);
 
-        LOG.info("Click back button");
-        searchBarPage.clickBackButton();
 
         LOG.info("Click home button");
         searchBarPage.clickHomeButton();

@@ -15,10 +15,11 @@ import static pages.BasePage.getBaseUrl;
 public class SearchMenuTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(SearchMenuTest.class);
     private String noutati = getBaseUrl() + "oportunitati/noutati.";
-    private String giftCards = getBaseUrl() + "gift-card/gift-card-chicville";
-    private String mese = getBaseUrl() + "mobila/mese";
+
+
     String material = "bumbac";
     String quantity = "3";
+
 
     @Test
     public void fillSearchMenu() {
@@ -58,6 +59,7 @@ public class SearchMenuTest extends BaseTest {
 
         LOG.info("Click 'back shopping' button");
         searchMenuPage.clickBackShoppingButton();
+        sleep(3000L);
 
 
         LOG.info("Click 'remove filter' button");
@@ -69,6 +71,9 @@ public class SearchMenuTest extends BaseTest {
 
 
 
-
     }
+
+
+
+
 }

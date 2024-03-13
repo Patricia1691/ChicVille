@@ -44,9 +44,9 @@ public class SearchBarTest extends BaseTest {
         searchBarPage.typeInAddQuantityField(quantity);
 
 
-//        LOG.info("Click 'remove' button");
-//        searchBarPage.clickRemoveButton();
-//        sleep(3000L);
+        LOG.info("Click 'remove' button");
+        searchBarPage.clickRemoveButton();
+        sleep(3000L);
 
         LOG.info("Click Send and check message");
         Assert.assertTrue(searchBarPage.isSuccessfullyAddedFieldDisplayed(), "Successfully Added Field is not displayed");

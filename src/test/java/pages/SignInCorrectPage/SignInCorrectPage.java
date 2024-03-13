@@ -1,21 +1,22 @@
-package pages.SignInPage;
+package pages.SignInCorrectPage;
 
-import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
+import org.openqa.selenium.By;
 
-public class SignInPage extends BasePage {
-    public static final Logger LOG = LoggerFactory.getLogger(SignInPage.class);
-    public static SignInPage instance;
 
-    private SignInPage() {
+public class SignInCorrectPage extends BasePage {
+    public static final Logger LOG = LoggerFactory.getLogger(pages.SignInCorrectPage.SignInCorrectPage.class);
+    public static pages.SignInCorrectPage.SignInCorrectPage instance;
+
+    private SignInCorrectPage() {
 
     }
 
-    public static SignInPage getInstance() {
+    public static pages.SignInCorrectPage.SignInCorrectPage getInstance() {
         if (instance == null) {
-            instance = new SignInPage();
+            instance = new pages.SignInCorrectPage.SignInCorrectPage();
         }
         return instance;
     }
@@ -24,7 +25,8 @@ public class SignInPage extends BasePage {
     private By emailField = By.xpath("//input[@type='email']");
     private By passwordField = By.xpath("//input[@type='password']");
     private By enterButton = By.id("send2");
-    private By errorMessage = By.xpath("//div[@class='account-login']//li[@class='error-msg']");
+    private By myAccount = By.xpath("//div[@class='welcome']");
+
 
 
 
@@ -55,9 +57,9 @@ public class SignInPage extends BasePage {
         driver.findElement(enterButton).click();
     }
 
-    public boolean isErrorMessageDisplayed() {
-        LOG.info("Verify if error message is displayed");
-        return driver.findElement(errorMessage).isDisplayed();
+    public boolean isMyAccountDisplayed() {
+        LOG.info("Verify if 'My account' is displayed");
+        return driver.findElement(myAccount).isDisplayed();
 
     }
 
@@ -65,13 +67,6 @@ public class SignInPage extends BasePage {
 
 
 
+
 }
-
-
-
-
-
-
-
-
 

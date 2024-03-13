@@ -24,13 +24,15 @@ public class SearchMenuPage extends BasePage {
 
     private By acceptCookies = By.xpath("//div[@class='ccb__button']/button[@class='consent-give']");
     private By noutatiMenu = By.xpath("//span[text()='noutati']");
-    private By noutatiCategory = By.xpath("//div[@class='nav-dropdown level0 shown-sub']//a[.='Noutati']");
+    private By noutatiCategory = By.xpath("//a[text()='Noutati']");
     private By filtreaza = By.xpath("//label[text()='Filtreaza']");
     private By selectMaterial = By.xpath("//dd[@class='odd']/select[@id='layered-select']");
     private By clickCart = By.xpath("//button[@class='button btn-cart']");
     private By addQuantity = By.xpath("//input[@class='input-text qty']");
     private By actualizeazaButton = By.xpath("//button[@class='button btn-update-pop']");
-    //de facut spre finalizarea comenzii-nu gasesc xpath bun
+    private By backShoppingButton = By.xpath("//button[@class='button btn-continue']");
+    private By removeFilter = By.xpath("//a[@class='btn-remove']/parent::li");
+
 
 
 
@@ -82,9 +84,22 @@ public class SearchMenuPage extends BasePage {
         sleep(3000);
     }
 
-
+    public void clickBackShoppingButton(){
+        LOG.info("Click 'back shopping' button");
+        driver.findElement(backShoppingButton).click();
 
     }
+
+    public void clickRemoveFilter(){
+        LOG.info("Click 'remove filter' button");
+        driver.findElement(removeFilter).click();
+
+    }
+
+
+
+
+}
 
 
 

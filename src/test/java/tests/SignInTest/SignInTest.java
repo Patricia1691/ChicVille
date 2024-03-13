@@ -14,6 +14,7 @@ public class SignInTest extends BaseTest {
         String email = "abc@email.com";
         String password = "parola1";
 
+
         LOG.info("Check 'button'");
         Assert.assertTrue(signInPage.isSignInButtonDisplayed(), "Button is not displayed");
 
@@ -27,6 +28,8 @@ public class SignInTest extends BaseTest {
         LOG.info("Click Enter and check message");
         signInPage.clickEnterButton();
         Assert.assertTrue(signInPage.isErrorMessageDisplayed(), "Error msg is not displayed");
+
+
 
 
     }

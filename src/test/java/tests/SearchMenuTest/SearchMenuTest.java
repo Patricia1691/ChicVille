@@ -56,6 +56,16 @@ public class SearchMenuTest extends BaseTest {
         searchMenuPage.clickActualizeazaButton();
         sleep(3000L);
 
+        LOG.info("Click 'back shopping' button");
+        searchMenuPage.clickBackShoppingButton();
+
+
+        LOG.info("Click 'remove filter' button");
+        searchMenuPage.clickRemoveFilter();
+        sleep(3000L);
+
+
+
 
 
 

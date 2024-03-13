@@ -1,8 +1,6 @@
 package pages.SearchBarPage;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -28,13 +26,10 @@ public class SearchBarPage extends BasePage {
     private By canaDaily = By.id("image-to-switch-45059");
     private By addToCart = By.xpath("//div[@class='add-to-cart']/button[@title='Cumpara']");
     private By addQuantity = By.xpath("//input[@class='input-text qty']");
-//    private By removeButton = By.xpath("//a[@title='Remove item']");
+    private By removeButton = By.xpath("//a[@title='Remove item']");
     private By successfullyAddedField = By.xpath("//li[@class='success-msg']");
     private By backButton = By.xpath("//button[@title='Inapoi la cumparaturi']");
     private By homeButton = By.xpath("//li[@class='home']");
-
-
-
 
 
     public void insertProductField(String productField) {
@@ -45,23 +40,23 @@ public class SearchBarPage extends BasePage {
 
     }
 
-    public void clickSearchBarButton(){
+    public void clickSearchBarButton() {
         LOG.info("Click search bar button");
         driver.findElement(searchBarButton).click();
 
     }
 
-    public void clickAcceptCookies(){
+    public void clickAcceptCookies() {
         LOG.info("Click Accept cookies");
         driver.findElement(acceptCookies).click();
     }
 
-    public void clickCanaDaily(){
+    public void clickCanaDaily() {
         LOG.info("Click 'Cana Daily' button");
         driver.findElement(canaDaily).click();
     }
 
-    public void clickAddToCart(){
+    public void clickAddToCart() {
         LOG.info("Click 'Add to cart' button");
         driver.findElement(addToCart).click();
         sleep(3000);
@@ -75,10 +70,12 @@ public class SearchBarPage extends BasePage {
 
     }
 
-//    public void clickRemoveButton(){
-//        LOG.info("Click 'remove' button");
-//        driver.findElement(removeButton).click();
-//    }
+    public void clickRemoveButton(){
+        LOG.info("Click 'remove' button");
+        driver.findElement(removeButton).click();
+        driver.switchTo().alert().accept();
+    }
+
 
     public boolean isSuccessfullyAddedFieldDisplayed() {
         LOG.info("Verify if the message is displayed");
@@ -86,23 +83,17 @@ public class SearchBarPage extends BasePage {
 
     }
 
-    public void clickBackButton(){
+    public void clickBackButton() {
         LOG.info("Click back button");
         driver.findElement(backButton).click();
         sleep(3000);
     }
 
-    public void clickHomeButton(){
+    public void clickHomeButton() {
         LOG.info("Click home button");
         driver.findElement(homeButton).click();
         sleep(3000);
     }
-
-
-
-
-
-
 
 
 }

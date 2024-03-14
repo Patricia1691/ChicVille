@@ -8,7 +8,6 @@ import pages.SearchBarPage.SearchBarPage;
 import pages.SearchMenuPage.SearchMenuPage;
 import pages.SignInCorrectPage.SignInCorrectPage;
 import pages.SignInPage.SignInPage;
-import pages.WishlistPage.WishlistPage;
 
 public class BaseTest {
     public SignInPage signInPage = SignInPage.getInstance();
@@ -16,7 +15,7 @@ public class BaseTest {
     public RegisterPage registerPage = RegisterPage.getInstance();
     public SearchMenuPage searchMenuPage = SearchMenuPage.getInstance();
     public SearchBarPage searchBarPage = SearchBarPage.getInstance();
-    public WishlistPage wishlistPage = WishlistPage.getInstance();
+
 
 
     @BeforeSuite

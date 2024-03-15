@@ -105,9 +105,11 @@ public class SearchMenuTest extends BaseTest {
 
         LOG.info("Typing full name");
         searchMenuPage.insertFullName(firstName, lastName);
+        sleep(3000L);
 
         LOG.info("Typing  email");
         searchMenuPage.insertEmail(email);
+        sleep(3000L);
 
         LOG.info("Typing  address");
         searchMenuPage.insertAddress(address);
@@ -116,13 +118,13 @@ public class SearchMenuTest extends BaseTest {
         searchMenuPage.insertPostalCode(postalCode);
 
         LOG.info("Typing  phone number");
-        searchMenuPage.insertPostalCode(phone);
+        searchMenuPage.insertPhone(phone);
 
-//        LOG.info("Select region");
-//        searchMenuPage.selectRegion(region);
-//
-//        LOG.info("Select city");
-//        searchMenuPage.selectRegion(city);
+        LOG.info("Select region");
+        searchMenuPage.selectRegion(region);
+
+        LOG.info("Select city");
+        searchMenuPage.selectCity(city);
 
         LOG.info("Click delivery method button");
         searchMenuPage.clickInputDelivery();

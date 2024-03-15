@@ -44,13 +44,13 @@ public class SearchMenuPage extends BasePage {
     private By inputFirstName = By.xpath("//input[@id='billing:firstname']");
     private By inputEmail = By.xpath("//input[@id='billing:email']");
     private By inputAddress = By.xpath("//input[@id='billing:street1']");
-//    private By inputRegion = By.xpath("//select[@id='billing:region_id']");
-//    private By inputCity = By.xpath("//select[@id='billing:city_select']");
+    private By selectRegion = By.xpath("//select[@id='billing:region_id']");
+    private By selectCity = By.xpath("//select[@id='billing:city_select']");
     private By inputPostalCode = By.xpath("//input[@id='billing:postcode']");
     private By inputPhone = By.xpath("//input[@id='billing:telephone']");
     private By inputDelivery = By.xpath("//input[@id='s_method_cargus_cargusm']");
     private By inputRamburs = By.xpath("//input[@id='p_method_cashondelivery']");
-    private By acceptConsent = By.xpath("//div[@id='firecheckout-agreement-1-window']");
+    private By acceptConsent = By.xpath("//input[@id='agreement-1']");
 
 
 
@@ -185,22 +185,23 @@ public class SearchMenuPage extends BasePage {
 
     }
 
-//    public void selectRegion(String region) {
-//        LOG.info("Selecting a region");
-//        Select newRegion = new Select(driver.findElement(inputRegion));
-//        newRegion.selectByValue(region);
-//    }
-//
-//    public void selectCity(String city) {
-//        LOG.info("Selecting a city");
-//        Select newCity = new Select(driver.findElement(inputCity));
-//        newCity.selectByValue(city);
-//    }
+    public void selectRegion(String region) {
+        LOG.info("Selecting  region");
+        driver.findElement(selectRegion).click();
+        driver.findElement(selectRegion).sendKeys(Keys.ENTER);
+    }
+
+    public void selectCity(String city) {
+        LOG.info("Selecting  city");
+        driver.findElement(selectCity).click();
+        driver.findElement(selectCity).sendKeys(Keys.ENTER);
+    }
+
+
 
     public void clickInputDelivery(){
         LOG.info("Click delivery method button");
         driver.findElement(inputDelivery).click();
-
     }
 
     public void clickInputRamburs(){
@@ -214,9 +215,6 @@ public class SearchMenuPage extends BasePage {
         driver.findElement(acceptConsent).click();
 
     }
-
-
-
 
 
 

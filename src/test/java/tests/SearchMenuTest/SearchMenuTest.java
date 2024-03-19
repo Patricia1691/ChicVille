@@ -1,16 +1,12 @@
 package tests.SearchMenuTest;
 
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import pages.SearchMenuPage.SearchMenuPage;
-import tests.BaseTest;
 import org.testng.annotations.Test;
+import tests.BaseTest;
 
 import static pages.BasePage.*;
-
-import static pages.BasePage.driver;
-import static pages.BasePage.getBaseUrl;
 
 public class SearchMenuTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(SearchMenuTest.class);
@@ -36,7 +32,7 @@ public class SearchMenuTest extends BaseTest {
         sleep(3000L);
 
         LOG.info("Click 'Accept cookies' button");
-        registerPage.clickAcceptCookies();
+        searchMenuPage.clickAcceptCookies();
 
         LOG.info("Click 'Noutati' button");
         searchMenuPage.clickNoutatiMenu();
@@ -138,15 +134,6 @@ public class SearchMenuTest extends BaseTest {
         searchMenuPage.clickAcceptConsent();
         sleep(1500L);
 
-
-
-
-
-
-
     }
-
-
-
 
 }

@@ -4,10 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.SearchBarPage.SearchBarPage;
 import tests.BaseTest;
 
-import static pages.BasePage.driver;
 import static pages.BasePage.sleep;
 
 
@@ -43,7 +41,6 @@ public class SearchBarTest extends BaseTest {
         LOG.info("Add the quantity in the field");
         searchBarPage.typeInAddQuantityField(quantity);
 
-
         LOG.info("Click 'remove' button");
         searchBarPage.clickRemoveButton();
         sleep(3000L);
@@ -52,14 +49,9 @@ public class SearchBarTest extends BaseTest {
         Assert.assertTrue(searchBarPage.isEmptyCartMessageDisplayed(), "Empty cart message is not displayed");
         sleep(3000L);
 
-
         LOG.info("Click home button");
         searchBarPage.clickHomeButton();
         sleep(3000L);
-
-
-
-
 
     }
 }

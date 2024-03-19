@@ -5,7 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
-import static pages.BasePage.*;
+
+import static pages.BasePage.sleep;
 
 public class SignInCorrectTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(tests.SignInCorrectTest.SignInCorrectTest.class);
@@ -17,7 +18,7 @@ public class SignInCorrectTest extends BaseTest {
 
 
         LOG.info("Check 'button'");
-        Assert.assertTrue(signInPage.isSignInButtonDisplayed(), "Button is not displayed");
+        Assert.assertTrue(signInCorrectPage.isSignInButtonDisplayed(), "Button is not displayed");
 
         LOG.info("Click 'Sign in' button");
         signInCorrectPage.clickSignInButton();
@@ -30,10 +31,6 @@ public class SignInCorrectTest extends BaseTest {
         signInCorrectPage.clickEnterButton();
         Assert.assertTrue(signInCorrectPage.isMyAccountDisplayed(), "My account is not displayed");
         sleep(3000);
-
-
-
-
 
     }
 

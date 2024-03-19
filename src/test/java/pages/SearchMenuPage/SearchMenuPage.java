@@ -2,7 +2,6 @@ package pages.SearchMenuPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -53,25 +52,22 @@ public class SearchMenuPage extends BasePage {
     private By acceptConsent = By.xpath("//input[@id='agreement-1']");
 
 
-
-
-
-    public void clickAcceptCookies(){
+    public void clickAcceptCookies() {
         LOG.info("Click Accept cookies");
         driver.findElement(acceptCookies).click();
     }
 
-    public void clickNoutatiMenu(){
+    public void clickNoutatiMenu() {
         LOG.info("Click 'Noutati' button");
         driver.findElement(noutatiMenu).click();
     }
 
-    public void clickNoutatiCategory(){
+    public void clickNoutatiCategory() {
         LOG.info("Click 'Noutati' button");
         driver.findElement(noutatiCategory).click();
     }
 
-    public void clickFiltreaza(){
+    public void clickFiltreaza() {
         LOG.info("Click 'Filtreaza' button");
         driver.findElement(filtreaza).click();
     }
@@ -83,7 +79,7 @@ public class SearchMenuPage extends BasePage {
         driver.findElement(selectMaterial).sendKeys(Keys.ENTER);
     }
 
-    public void clickCart(){
+    public void clickCart() {
         LOG.info("Click 'Cart' button");
         driver.findElement(clickCart).click();
         sleep(3000);
@@ -97,41 +93,43 @@ public class SearchMenuPage extends BasePage {
 
     }
 
-    public void clickActualizeazaButton(){
+    public void clickActualizeazaButton() {
         LOG.info("Click Actualizeaza button");
         driver.findElement(actualizeazaButton).click();
         sleep(3000);
     }
 
-    public void clickBackShoppingButton(){
+    public void clickBackShoppingButton() {
         LOG.info("Click 'back shopping' button");
         driver.findElement(backShoppingButton).click();
 
     }
 
-    public void clickRemoveFilter(){
+    public void clickRemoveFilter() {
         LOG.info("Click 'remove filter' button");
         driver.findElement(removeFilter).click();
 
     }
 
-    public void clickCadouriTab(){
+    public void clickCadouriTab() {
         LOG.info("Click 'Cadouri' button");
         driver.findElement(cadouriTab).click();
 
     }
-    public void clickCadouriCopii(){
+
+    public void clickCadouriCopii() {
         LOG.info("Click 'Cadouri copii' button");
         driver.findElement(cadouriCopii).click();
 
     }
-    public void clickPapusaAnnie(){
+
+    public void clickPapusaAnnie() {
         LOG.info("Click 'Papusa Annie' button");
         driver.findElement(papusaAnnie).click();
 
     }
 
-    public void clickCumparaButton(){
+    public void clickCumparaButton() {
         LOG.info("Click 'cumpara' button");
         driver.findElement(cumparaButton).click();
 
@@ -143,13 +141,13 @@ public class SearchMenuPage extends BasePage {
 
     }
 
-    public void clickOrderButton(){
+    public void clickOrderButton() {
         LOG.info("Click 'order' button");
         driver.findElement(orderButton).click();
 
     }
 
-    public void clickInputPfButton(){
+    public void clickInputPfButton() {
         LOG.info("Click 'persoana fizica' button");
         driver.findElement(inputPf).click();
 
@@ -198,26 +196,22 @@ public class SearchMenuPage extends BasePage {
     }
 
 
-
-    public void clickInputDelivery(){
+    public void clickInputDelivery() {
         LOG.info("Click delivery method button");
         driver.findElement(inputDelivery).click();
     }
 
-    public void clickInputRamburs(){
+    public void clickInputRamburs() {
         LOG.info("Click ramburs payment method button");
         driver.findElement(inputRamburs).click();
 
     }
 
-    public void clickAcceptConsent(){
+    public void clickAcceptConsent() {
         LOG.info("Click 'accept consent' button");
         driver.findElement(acceptConsent).click();
 
     }
-
-
-
 
 }
 

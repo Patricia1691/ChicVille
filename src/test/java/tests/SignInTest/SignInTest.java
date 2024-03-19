@@ -29,9 +29,6 @@ public class SignInTest extends BaseTest {
         signInPage.clickEnterButton();
         Assert.assertTrue(signInPage.isErrorMessageDisplayed(), "Error msg is not displayed");
 
-
-
-
     }
 
 }

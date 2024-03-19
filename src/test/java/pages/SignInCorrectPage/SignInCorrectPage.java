@@ -1,9 +1,9 @@
 package pages.SignInCorrectPage;
 
+import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
-import org.openqa.selenium.By;
 
 
 public class SignInCorrectPage extends BasePage {
@@ -28,8 +28,6 @@ public class SignInCorrectPage extends BasePage {
     private By myAccount = By.xpath("//div[@class='welcome']");
 
 
-
-
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' Button");
         driver.findElement(signInButton).click();
@@ -49,7 +47,7 @@ public class SignInCorrectPage extends BasePage {
     public void insertPasswordField(String Password) {
         LOG.info("input 'Password' in field");
         driver.findElement(passwordField).sendKeys(Password);
-        sleep(3000l);
+        sleep(3000);
     }
 
     public void clickEnterButton() {
@@ -62,11 +60,6 @@ public class SignInCorrectPage extends BasePage {
         return driver.findElement(myAccount).isDisplayed();
 
     }
-
-
-
-
-
 
 }
 

@@ -31,7 +31,6 @@ public class RegisterPage extends BasePage {
     private By mandatoryField = By.id("advice-required-entry-captcha_user_create");
 
 
-
     public void insertFullName(String fName, String lName) {
         LOG.info("Inserting FirstName and LastName");
         driver.findElement(inputFirstName).sendKeys(fName);
@@ -56,7 +55,7 @@ public class RegisterPage extends BasePage {
         driver.findElement(confirmPassword).sendKeys(pass);
     }
 
-    public void clickAcceptCookies(){
+    public void clickAcceptCookies() {
         LOG.info("Click Accept cookies");
         driver.findElement(acceptCookies).click();
     }
@@ -71,9 +70,5 @@ public class RegisterPage extends BasePage {
         return driver.findElement(mandatoryField).isDisplayed();
 
     }
-
-
-
-
 
 }

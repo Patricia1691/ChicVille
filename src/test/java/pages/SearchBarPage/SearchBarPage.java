@@ -31,7 +31,6 @@ public class SearchBarPage extends BasePage {
     private By homeButton = By.xpath("//li[@class='home']");
 
 
-
     public void insertProductField(String productField) {
         LOG.info("Insert product field");
         driver.findElement(inputProductField).click();
@@ -70,7 +69,7 @@ public class SearchBarPage extends BasePage {
 
     }
 
-    public void clickRemoveButton(){
+    public void clickRemoveButton() {
         LOG.info("Click 'remove' button");
         driver.findElement(removeButton).click();
         driver.switchTo().alert().accept();
@@ -90,6 +89,5 @@ public class SearchBarPage extends BasePage {
         driver.findElement(homeButton).click();
         sleep(3000);
     }
-
 
 }

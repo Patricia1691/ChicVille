@@ -17,7 +17,6 @@ public class BaseTest {
     public SearchBarPage searchBarPage = SearchBarPage.getInstance();
 
 
-
     @BeforeSuite
     public void init() {
         BasePage.setUp();

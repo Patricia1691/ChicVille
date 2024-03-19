@@ -1,20 +1,20 @@
 package tests.RegisterTest;
 
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import tests.BaseTest;
 import org.testng.annotations.Test;
+import tests.BaseTest;
 
 import static pages.BasePage.*;
 
 
 public class RegisterTest extends BaseTest {
-    public  static final  Logger LOG = LoggerFactory.getLogger(RegisterTest.class);
+    public static final Logger LOG = LoggerFactory.getLogger(RegisterTest.class);
     private String newUrl = getBaseUrl() + "customer/account/create/";
 
     @Test
-    public void fillRegister(){
+    public void fillRegister() {
         driver.get(newUrl);
 
         sleep(3000L);
@@ -24,8 +24,6 @@ public class RegisterTest extends BaseTest {
         String lastName = "Popescu";
         String email = "automation@domnain.com";
         String password = "secretPassword";
-
-
 
 
         LOG.info("Typing full name");
@@ -53,9 +51,6 @@ public class RegisterTest extends BaseTest {
         Assert.assertTrue(registerPage.isMandatoryFieldDisplayed(), "Mandatory Field is not displayed");
         sleep(3000L);
 
-
-
     }
-
 
 }

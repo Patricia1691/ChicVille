@@ -27,7 +27,6 @@ public class SignInPage extends BasePage {
     private By errorMessage = By.xpath("//div[@class='account-login']//li[@class='error-msg']");
 
 
-
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' Button");
         driver.findElement(signInButton).click();
@@ -47,7 +46,7 @@ public class SignInPage extends BasePage {
     public void insertPasswordField(String Password) {
         LOG.info("input 'Password' in field");
         driver.findElement(passwordField).sendKeys(Password);
-        sleep(3000l);
+        sleep(3000L);
     }
 
     public void clickEnterButton() {
@@ -60,10 +59,6 @@ public class SignInPage extends BasePage {
         return driver.findElement(errorMessage).isDisplayed();
 
     }
-
-
-
-
 
 }
 

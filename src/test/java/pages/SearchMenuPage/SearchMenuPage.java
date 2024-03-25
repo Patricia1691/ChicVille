@@ -60,11 +60,13 @@ public class SearchMenuPage extends BasePage {
     public void clickNoutatiMenu() {
         LOG.info("Click 'Noutati' button");
         driver.findElement(noutatiMenu).click();
+        sleep(3000);
     }
 
     public void clickNoutatiCategory() {
         LOG.info("Click 'Noutati' button");
         driver.findElement(noutatiCategory).click();
+        sleep(3000);
     }
 
     public void clickFiltreaza() {
@@ -102,6 +104,7 @@ public class SearchMenuPage extends BasePage {
     public void clickBackShoppingButton() {
         LOG.info("Click 'back shopping' button");
         driver.findElement(backShoppingButton).click();
+        sleep(3000);
 
     }
 
@@ -114,24 +117,28 @@ public class SearchMenuPage extends BasePage {
     public void clickCadouriTab() {
         LOG.info("Click 'Cadouri' button");
         driver.findElement(cadouriTab).click();
+        sleep(3000);
 
     }
 
     public void clickCadouriCopii() {
         LOG.info("Click 'Cadouri copii' button");
         driver.findElement(cadouriCopii).click();
+        sleep(3000);
 
     }
 
     public void clickPapusaAnnie() {
         LOG.info("Click 'Papusa Annie' button");
         driver.findElement(papusaAnnie).click();
+        sleep(3000L);
 
     }
 
     public void clickCumparaButton() {
         LOG.info("Click 'cumpara' button");
         driver.findElement(cumparaButton).click();
+        sleep(3000L);
 
     }
 

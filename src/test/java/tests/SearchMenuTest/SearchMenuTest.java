@@ -52,14 +52,15 @@ public class SearchMenuTest extends BaseTest {
 
         LOG.info("Click 'Cart' button");
         searchMenuPage.clickCart();
-        sleep(3000L);
+        sleep(5000L);
+
 
         LOG.info("Add the quantity in the field");
         searchMenuPage.typeInAddQuantityField(quantity);
 
         LOG.info("Click Actualizeaza button");
         searchMenuPage.clickActualizeazaButton();
-        sleep(3000L);
+
 
         LOG.info("Click 'back shopping' button");
         searchMenuPage.clickBackShoppingButton();
@@ -80,7 +81,7 @@ public class SearchMenuTest extends BaseTest {
 
         LOG.info("Click 'papusa Annie' button");
         searchMenuPage.clickPapusaAnnie();
-        sleep(3000L);
+        sleep(5000L);
 
 
         LOG.info("Click 'cumpara' button");
